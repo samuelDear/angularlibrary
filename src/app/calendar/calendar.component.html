@@ -1,1 +1,24 @@
-<p>calendar works!</p>
+<div class="calendarBox">
+    <span *ngIf="msg != ''" class="alertEvent">{{msg}}</span>
+    <div class="calendarMain">
+        <div class="calendarHeader">
+            <span class="arrow" (click)="changeMonth(-1)">&lt;</span>
+            <h1>{{ currentYear  }} - {{ currentMonth }}</h1>
+            <span class="arrow" (click)="changeMonth(1)">&gt;</span>
+        </div>
+        <div class="boxDay">
+            <span>D</span>
+            <span>L</span>
+            <span>M</span>
+            <span>X</span>
+            <span>J</span>
+            <span>V</span>
+            <span>S</span>
+        </div>
+        <div class="calendarBody">
+            <div (click)="selectedDay(x)" [className]=" x < startedDay ? 'dayBox' : 'clickeable dayBox'" *ngFor="let i of [].constructor(qtyDays + startedDay); let x = index">
+                {{( x < startedDay ? '' : (x - startedDay) + 1 )}}
+            </div>
+        </div>
+    </div>
+</div>
