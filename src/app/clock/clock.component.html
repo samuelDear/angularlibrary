@@ -1,0 +1,29 @@
+<div class="clockBox">
+    <div class="options">
+        <p (click)="option = 1" class="buttonOption">chronometer</p>
+        <p (click)="option = 2" class="buttonOption">Clock</p>
+        <p (click)="option = 3" class="buttonOption">Countdown</p>
+    </div>
+
+    <div class="content">
+
+        <div *ngIf="option == 2" class="clock">
+            <div class="timeBox">
+                {{ clock | date: 'hh' }}
+            </div>
+            <span class="separationTime">:</span>
+            <div class="timeBox">
+                {{ clock | date: 'mm' }}
+            </div>
+            <span class="separationTime">:</span>
+            <div class="timeBox">
+                {{ clock | date: 'ss' }}
+            </div>
+            <span class="separationTime">:</span>
+            <div class="timeBox">
+                {{ clock | date: 'a' }}
+            </div>
+        </div>
+
+    </div>
+</div>

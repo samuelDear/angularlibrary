@@ -1,0 +1,43 @@
+.clockBox{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.options {
+    display: flex;
+    margin-top: 20px;
+}
+
+.buttonOption {
+    padding: 10px;
+    border: 2px solid #f3f3f3;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.clock {
+    display: flex;
+    font-size: 34px;
+    align-items: center;
+}
+
+.separationTime{
+    color: #FFF;
+    margin: 0px 5px;
+}
+
+.timeBox{
+    background-color: #333;
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 14px;
+    border-radius: 10px;
+}
