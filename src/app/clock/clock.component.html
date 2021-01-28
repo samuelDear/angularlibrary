@@ -1,11 +1,38 @@
 <div class="clockBox">
     <div class="options">
-        <p (click)="option = 1" class="buttonOption">chronometer</p>
-        <p (click)="option = 2" class="buttonOption">Clock</p>
-        <p (click)="option = 3" class="buttonOption">Countdown</p>
+        <p (click)="option = 1" [className]=" option == 1 ? 'buttonOptionActive buttonOption' : 'buttonOption' ">chronometer</p>
+        <p (click)="option = 2" [className]=" option == 2 ? 'buttonOptionActive buttonOption' : 'buttonOption' ">Clock</p>
+        <p (click)="option = 3" [className]=" option == 3 ? 'buttonOptionActive buttonOption' : 'buttonOption' ">Countdown</p>
     </div>
 
     <div class="content">
+
+        <div *ngIf="option == 1" class="chrono">
+            <div class="chronoFun">
+                <div class="timeBox">
+                    {{ hours }}
+                </div>
+                <span class="separationTime">:</span>
+                <div class="timeBox">
+                    {{ minutes }}
+                </div>
+                <span class="separationTime">:</span>
+                <div class="timeBox">
+                    {{ seconds }}
+                </div>
+            </div>
+            <div class="buttonBox">
+                <button type="button" class="buttonGlobal" *ngIf="!isStartedChrono" (click)="startChrono()">
+                    Start!
+                </button>
+                <button type="button" class="buttonGlobal" (click)="stopChrono()">
+                    Stop!
+                </button>
+                <button type="button" class="buttonGlobal" (click)="resetChrono()">
+                    Reset
+                </button>
+            </div>
+        </div>
 
         <div *ngIf="option == 2" class="clock">
             <div class="timeBox">
@@ -25,5 +52,42 @@
             </div>
         </div>
 
+        <div *ngIf="option == 3" class="chrono">
+            <form class="chronoFun">
+                <div class="countDownInput">
+                    <img (click)="addTime('hours')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/addIc.svg"/>
+                    <div class="timeBox countDown">
+                        {{ hoursCount }}
+                    </div>
+                    <img (click)="lessTime('hours')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/lessIc.svg"/>
+                </div>
+                <div class="countDownInput">
+                    <img (click)="addTime('minutes')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/addIc.svg"/>
+                    <div class="timeBox countDown">
+                        {{ minutesCount }}
+                    </div>
+                    <img (click)="lessTime('minutes')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/lessIc.svg"/>
+                </div>
+                <div class="countDownInput">
+                    <img (click)="addTime('seconds')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/addIc.svg"/>
+                    <div class="timeBox countDown">
+                        {{ secondsCount }}
+                    </div>
+                    <img (click)="lessTime('seconds')" *ngIf="!isStartedCount" class="addLessIc" src="../../assets/images/lessIc.svg"/>
+                </div>
+            </form>
+            <div class="buttonBox">
+                <button type="button" *ngIf="!isStartedCount" class="buttonGlobal" 
+                    (click)="startCount()">
+                    Start!
+                </button>
+                <button type="button" class="buttonGlobal" (click)="stopCount()">
+                    Stop!
+                </button>
+                <button type="button" class="buttonGlobal" (click)="resetCount()">
+                    Reset
+                </button>
+            </div>
+        </div>
     </div>
 </div>

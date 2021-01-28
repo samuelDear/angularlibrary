@@ -17,16 +17,30 @@
     border: 2px solid #f3f3f3;
     margin: 0px 10px;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.buttonOptionActive {
+    background-color: #0A4E7B;
+    color: #FFF;
 }
 
 .content {
     margin-top: 50px;
 }
 
-.clock {
+.clock, .chrono, .chronoFun {
     display: flex;
     font-size: 34px;
     align-items: center;
+}
+
+.chrono {
+    flex-direction: column;
+}
+
+.countDown{
+    margin: 0px 10px;
 }
 
 .separationTime{
@@ -40,4 +54,33 @@
     border: 1px solid #FFF;
     padding: 14px;
     border-radius: 10px;
+}
+
+.buttonBox{
+    padding: 10px;
+}
+
+.buttonGlobal {
+    border-style: none;
+    background-color: #7EC6F6;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    color: #333;
+    cursor:pointer;
+}
+
+button:focus{
+    outline: none;
+}
+
+.countDownInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addLessIc {
+    margin: 10px 0px;
+    cursor: pointer;
 }
