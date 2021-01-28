@@ -1,0 +1,27 @@
+<div class="wizardBox">
+    <div class="modalBox">
+        <div class="modalSteps">
+            <div *ngFor="let i of [].constructor(qtySteps); let x = index" 
+            [className]="currentStep > x ? 'stepBox stepActive' : 'stepBox'" >
+            </div>
+        </div>
+        <div class="modalContent">
+            <img [src]="src" class="imgContent"/>
+            <p class="msgModal">Te encuentras en el paso {{ currentStep }}!</p>
+        </div>
+        <div class="buttonBox">
+            <button type="button" 
+                class="buttonGlobal" (click)="goBegin()"
+                *ngIf="currentStep != 1">Inicio</button>
+            <button type="button" 
+                class="buttonGlobal" (click)="addStep()"
+                *ngIf="currentStep != qtySteps">Siguiente</button>
+            <button type="button" 
+                class="buttonGlobal" (click)="gobackStep()"
+                *ngIf="currentStep != 1">Anterior</button>
+            <button type="button" 
+                class="buttonGlobal"
+                *ngIf="currentStep == qtySteps">Finalizar</button>
+        </div>
+    </div>
+</div>

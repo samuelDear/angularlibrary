@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
 import { ClockComponent } from './clock/clock.component';
+import { WizardComponent } from './wizard/wizard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     HomeComponent,
-    ClockComponent
+    ClockComponent,
+    WizardComponent
   ],
   imports: [
     BrowserModule,
